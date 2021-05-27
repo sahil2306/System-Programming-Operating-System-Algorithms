@@ -51,11 +51,11 @@ public class pass1 {
                 if(symbolTable.containsKey(words[0])) {
                     symbolTable.put(words[0], new TableRow(words[0], locCounter, symbolTable.get(words[0]).getIndex()));
                 }else {
-                    symbolTable.put(words[0], new TableRow(words[0], locCounter, symbolIndex));
+                    symbolTable.put(words[0], new TableRow(words[0], locCounter, symbolIndex++));
                 }
                 sb.append("(S,").append(symbolTable.get(words[0]).getIndex()).append(") ");
                 //CHANGE
-                symbolIndex++;
+                //symbolIndex++;
             }
 
             //For Commands
@@ -110,7 +110,7 @@ public class pass1 {
                     if(symbolTable.containsKey(words[0]))
                         symbolTable.put(words[0], new TableRow(words[0],loc,symbolTable.get(words[0]).getIndex())) ;
                     else
-                        symbolTable.put(words[0], new TableRow(words[0],loc,++symbolIndex));
+                        symbolTable.put(words[0], new TableRow(words[0],loc,symbolIndex++));
                     ++locCounter;
                 }
 
@@ -131,13 +131,13 @@ public class pass1 {
                     int j = 2;
                     while(j < words.length) {
                         words[j]=words[j].replace(",", "");
-                        if(look.getType(words[j]).equals("RG")) {
+                        if(look.getType(words[j]).equals("RG") || look.getType(words[j]).equals("CC")) {
                             sb.append(look.getCode(words[j]));
                         }
                         else {
                             if(words[j].contains("=")) {
                                 words[j] = words[j].replace("=","").replace("'","");
-                                literalTable.add(new TableRow(words[j],-1,++literalIndex));
+                                literalTable.add(new TableRow(words[j],-1,literalIndex++));
                                 ++literalTable_pnt;
                                 sb.append("(L,").append(literalIndex).append(") ");
                             }else if(symbolTable.containsKey(words[j])) {
@@ -145,7 +145,7 @@ public class pass1 {
                                 sb.append("(S,").append(idx).append(") ");
                             }
                             else {
-                                symbolTable.put(words[j],new TableRow(words[j],-1,++symbolIndex));
+                                symbolTable.put(words[j],new TableRow(words[j],-1,symbolIndex++));
                                 int idx=symbolTable.get(words[j]).getIndex();
                                 sb.append("(S,").append(idx).append(") ");
                             }
@@ -166,6 +166,8 @@ public class pass1 {
                         }
                         poolTable_pnt++;
                         poolTable.add(literalTable_pnt);
+                    }else{
+                        poolTable.remove(poolTable_pnt);
                     }
                     sb.append(look.getCode(words[1]));
                 }

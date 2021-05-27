@@ -6,7 +6,7 @@ public class Main {
         pass1 first = new pass1();
 
         //Code File Input
-        first.parseFile("input.asm");
+        first.parseFile("input4.asm");
 
         //Pass1 All Outputs
         System.out.println(first.getIC());
