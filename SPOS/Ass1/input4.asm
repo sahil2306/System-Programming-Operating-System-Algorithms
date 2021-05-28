@@ -6,11 +6,11 @@ A   MUL BREG, TR
     MOVER CREG, TR
     COMP CREG, N
     BC LE, A
-    MOVEM BREG, RG
+    MOVEM BREG, RS
     LTORG
-    PRINT RG
+    PRINT RS
     STOP
 N   DS 1
-RG  DS 20
+RS  DS 20
 TR  DS 1
     END

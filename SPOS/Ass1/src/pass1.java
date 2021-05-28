@@ -2,9 +2,7 @@
 import support.InstanceTable;
 import support.TableRow;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -53,7 +51,7 @@ public class pass1 {
                 }else {
                     symbolTable.put(words[0], new TableRow(words[0], locCounter, symbolIndex++));
                 }
-                sb.append("(S,").append(symbolTable.get(words[0]).getIndex()).append(") ");
+                //sb.append("(S,").append(symbolTable.get(words[0]).getIndex()).append(") ");
                 //CHANGE
                 //symbolIndex++;
             }
@@ -78,7 +76,8 @@ public class pass1 {
                     int ptr = poolTable.get(poolTable_pnt);
 
                     for(int j = ptr; j<literalTable_pnt; j++) {
-                        sb.append(look.getCode(words[1])).append(look.getCode("DC")).append("(C,").append(literalTable.get(j).getSymbol()).append(")");
+                        //sb.append(look.getCode(words[1])).append(look.getCode("DC")).append("(C,").append(literalTable.get(j).getSymbol()).append(")");
+                        sb.append(look.getCode("DC")).append("(C,").append(literalTable.get(j).getSymbol()).append(")");
                         if(j != literalTable_pnt-1) {
                             sb.append("\n");
                         }
@@ -137,9 +136,9 @@ public class pass1 {
                         else {
                             if(words[j].contains("=")) {
                                 words[j] = words[j].replace("=","").replace("'","");
-                                literalTable.add(new TableRow(words[j],-1,literalIndex++));
+                                literalTable.add(new TableRow(words[j],-1,literalIndex));
                                 ++literalTable_pnt;
-                                sb.append("(L,").append(literalIndex).append(") ");
+                                sb.append("(L,").append(literalIndex++).append(") ");
                             }else if(symbolTable.containsKey(words[j])) {
                                 int idx=symbolTable.get(words[j]).getIndex();
                                 sb.append("(S,").append(idx).append(") ");
@@ -173,18 +172,22 @@ public class pass1 {
                 }
                 sb.append("\n");
             }
-
         }
+
     }
 
-    public String getIC() {
+    public String getIC() throws IOException {
+        BufferedWriter out = new BufferedWriter(new FileWriter("output.txt"));
+        out.write(sb.toString());
+        out.close();
         return sb.toString();
     }
 
-    public String getSymbolTable() {
+    public String getSymbolTable() throws IOException {
+        BufferedWriter out = new BufferedWriter(new FileWriter("Symboltable.txt"));
         StringBuilder temp = new StringBuilder();
-        temp.append("\n-------------- SYMBOL TABLE ---------------\n\n");
-        temp.append("Index\tSymbol\tAddress\n");
+        //temp.append("\n-------------- SYMBOL TABLE ---------------\n\n");
+        //temp.append("Index\tSymbol\tAddress\n");
         for(Map.Entry<String,TableRow> mapElement : symbolTable.entrySet()) {
             TableRow tableRow = mapElement.getValue();
             String symbol = tableRow.getSymbol();
@@ -192,32 +195,40 @@ public class pass1 {
             int index = tableRow.getIndex();
             temp.append(index).append("\t\t").append(symbol).append("\t\t").append(address).append("\n");
         }
-        temp.append("\n-------------------------------------------\n");
+        //temp.append("\n-------------------------------------------\n");
+        out.write(temp.toString());
+        out.close();
         return temp.toString();
     }
 
-    public String getLiteralTable() {
+    public String getLiteralTable() throws IOException {
         StringBuilder temp = new StringBuilder();
-        temp.append("\n-------------- LITERAL TABLE --------------\n\n");
-        temp.append("Index\tSymbol\tAddress\n");
+        BufferedWriter out = new BufferedWriter(new FileWriter("Literaltable.txt"));
+        //temp.append("\n-------------- LITERAL TABLE --------------\n\n");
+        //temp.append("Index\tSymbol\tAddress\n");
         for(TableRow tableRow : literalTable) {
             String symbol = tableRow.getSymbol();
             int address = tableRow.getAddress();
             int index = tableRow.getIndex();
             temp.append(index).append("\t\t").append(symbol).append("\t\t").append(address).append("\n");
         }
-        temp.append("\n-------------------------------------------\n");
+        //temp.append("\n-------------------------------------------\n");
+        out.write(temp.toString());
+        out.close();
         return temp.toString();
     }
 
-    public String getPoolTable() {
+    public String getPoolTable() throws IOException {
+        BufferedWriter out = new BufferedWriter(new FileWriter("Pooltable.txt"));
         StringBuilder temp = new StringBuilder();
-        temp.append("\n-------------- POOL TABLE ---------------\n\n");
-        temp.append("Index\n");
+        //temp.append("\n-------------- POOL TABLE ---------------\n\n");
+        //temp.append("Index\n");
         for(Integer i : poolTable) {
             temp.append(i).append("\n");
         }
-        temp.append("\n-----------------------------------------\n");
+        //temp.append("\n-----------------------------------------\n");
+        out.write(temp.toString());
+        out.close();
         return temp.toString();
     }
 
