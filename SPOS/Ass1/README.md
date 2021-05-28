@@ -69,3 +69,25 @@ Index<br />
 2<br />
 <br />
 -----------------------------------------<br />
+
+*Assignment 2* : 
+Pass2 of Assembler
+
+**Output**<br />
+____ &nbsp;&nbsp;&nbsp; __ &nbsp;&nbsp;&nbsp; __ &nbsp;&nbsp;&nbsp; ____<br />
+10 &nbsp;&nbsp;&nbsp; 00 &nbsp;&nbsp;&nbsp; 1011<br />
+05 &nbsp;&nbsp;&nbsp; 02 &nbsp;&nbsp;&nbsp; 1008<br />
+06 &nbsp;&nbsp;&nbsp; 02 &nbsp;&nbsp;&nbsp; 1032<br />
+04 &nbsp;&nbsp;&nbsp; 02 &nbsp;&nbsp;&nbsp; 1032<br />
+05 &nbsp;&nbsp;&nbsp; 03 &nbsp;&nbsp;&nbsp; 1032<br />
+07 &nbsp;&nbsp;&nbsp; 03 &nbsp;&nbsp;&nbsp; 1011<br />
+08 &nbsp;&nbsp;&nbsp; 04 &nbsp;&nbsp;&nbsp; 1003<br />
+06 &nbsp;&nbsp;&nbsp; 02 &nbsp;&nbsp;&nbsp; 1012<br />
+00 &nbsp;&nbsp;&nbsp; 00 &nbsp;&nbsp;&nbsp; 1<br />
+11 &nbsp;&nbsp;&nbsp; 00 &nbsp;&nbsp;&nbsp; 1012<br />
+01 &nbsp;&nbsp;&nbsp; 00 &nbsp;&nbsp;&nbsp; 0000<br />
+____ &nbsp;&nbsp;&nbsp; __ &nbsp;&nbsp;&nbsp; __ &nbsp;&nbsp;&nbsp; ____<br />
+____ &nbsp;&nbsp;&nbsp; __ &nbsp;&nbsp;&nbsp; __ &nbsp;&nbsp;&nbsp; ____<br />
+____ &nbsp;&nbsp;&nbsp; __ &nbsp;&nbsp;&nbsp; __ &nbsp;&nbsp;&nbsp; ____<br />
+____ &nbsp;&nbsp;&nbsp; __ &nbsp;&nbsp;&nbsp; __ &nbsp;&nbsp;&nbsp; ____<br />
+
