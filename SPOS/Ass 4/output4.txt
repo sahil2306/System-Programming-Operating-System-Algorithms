@@ -1,0 +1,110 @@
+import java.util.*;	 ==> IMPORT_STATEMENT
+import java.io.*;	 ==> IMPORT_STATEMENT
+class			 ==> KEYWORD
+Main			 ==> IDENTIFIER
+{			 ==> OPENING BLOCK
+private			 ==> ACCESS_OPERATOR
+String			 ==> DATATYPE
+s			 ==> IDENTIFIER
+;			 ==> SEMICOLON
+public			 ==> ACCESS_OPERATOR
+int			 ==> DATATYPE
+i			 ==> IDENTIFIER
+;			 ==> SEMICOLON
+double			 ==> DATATYPE
+num			 ==> IDENTIFIER
+;			 ==> SEMICOLON
+public			 ==> ACCESS_OPERATOR
+static			 ==> KEYWORD
+void			 ==> DATATYPE
+main			 ==> IDENTIFIER
+(			 ==> OPENING BRACKET
+String			 ==> DATATYPE
+[]args			 ==> IDENTIFIER
+)			 ==> CLOSING BRACKET
+{			 ==> OPENING BLOCK
+s			 ==> IDENTIFIER
+=			 ==> ARITHMETIC_OPERATOR
+"Hello Universe!"	 ==> STRING_CONSTANT
+;			 ==> SEMICOLON
+i			 ==> IDENTIFIER
+=			 ==> ARITHMETIC_OPERATOR
+5			 ==> CONSTANT
+;			 ==> SEMICOLON
+num			 ==> IDENTIFIER
+=			 ==> ARITHMETIC_OPERATOR
+69.96			 ==> REAL CONSTANT
+;			 ==> SEMICOLON
+System.out.println	 ==> PRINTING_STATEMENT
+(			 ==> OPENING BRACKET
+"Welcome			 ==> IDENTIFIER
+,"+			 ==> ARITHMETIC_OPERATOR
+s			 ==> IDENTIFIER
+)			 ==> CLOSING BRACKET
+;			 ==> SEMICOLON
+if			 ==> CONDITIONAL
+(			 ==> OPENING BRACKET
+num			 ==> IDENTIFIER
+>			 ==> LOGICAL_OPERATOR
+50			 ==> CONSTANT
+)			 ==> CLOSING BRACKET
+{			 ==> OPENING BLOCK
+System.out.println	 ==> PRINTING_STATEMENT
+(			 ==> OPENING BRACKET
+"num is greater than 50 & num = "	 ==> STRING_CONSTANT
++			 ==> ARITHMETIC_OPERATOR
+num			 ==> IDENTIFIER
+)			 ==> CLOSING BRACKET
+;			 ==> SEMICOLON
+}			 ==> CLOSING BLOCK
+else if			 ==> CONDITIONAL
+(			 ==> OPENING BRACKET
+num			 ==> IDENTIFIER
+==			 ==> LOGICAL_OPERATOR
+50			 ==> CONSTANT
+)			 ==> CLOSING BRACKET
+{			 ==> OPENING BLOCK
+System.out.println	 ==> PRINTING_STATEMENT
+(			 ==> OPENING BRACKET
+"num is equal to 50 & num = "	 ==> STRING_CONSTANT
++			 ==> ARITHMETIC_OPERATOR
+num			 ==> IDENTIFIER
+)			 ==> CLOSING BRACKET
+;			 ==> SEMICOLON
+}			 ==> CLOSING BLOCK
+else			 ==> CONDITIONAL
+{			 ==> OPENING BLOCK
+System.out.println	 ==> PRINTING_STATEMENT
+(			 ==> OPENING BRACKET
+"num is lesser than 50 & num = "	 ==> STRING_CONSTANT
++			 ==> ARITHMETIC_OPERATOR
+num			 ==> IDENTIFIER
+)			 ==> CLOSING BRACKET
+;			 ==> SEMICOLON
+}			 ==> CLOSING BLOCK
+for			 ==> ITERATIVE
+(			 ==> OPENING BRACKET
+int			 ==> DATATYPE
+j			 ==> IDENTIFIER
+=			 ==> ARITHMETIC_OPERATOR
+0			 ==> CONSTANT
+;			 ==> SEMICOLON
+j			 ==> IDENTIFIER
+<			 ==> LOGICAL_OPERATOR
+i			 ==> IDENTIFIER
+;			 ==> SEMICOLON
+++			 ==> ARITHMETIC_OPERATOR
+j			 ==> IDENTIFIER
+)			 ==> CLOSING BRACKET
+{			 ==> OPENING BLOCK
+System.out.println	 ==> PRINTING_STATEMENT
+(			 ==> OPENING BRACKET
+"j = "	 ==> STRING_CONSTANT
++			 ==> ARITHMETIC_OPERATOR
+j			 ==> IDENTIFIER
+)			 ==> CLOSING BRACKET
+;			 ==> SEMICOLON
+}			 ==> CLOSING BLOCK
+}			 ==> CLOSING BLOCK
+}			 ==> CLOSING BLOCK
+
